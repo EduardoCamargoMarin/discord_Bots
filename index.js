@@ -37,6 +37,18 @@ client.login(TOKEN)
 
 //listener para interação
 client.on(Events.InteractionCreate, async interaction => {
+        if(interaction.isStringSelectMenu()) {
+            const selected = interaction.values[0]
+            if(selected == "udemy") {
+                await interaction.reply("Link: https://www.udemy.com/?ranMID=39197&ranEAID=0EOJOrTo2D4&ranSiteID=0EOJOrTo2D4-rP2VhXXhjwktf7ZGDYWScw&LSNPUBID=0EOJOrTo2D4&utm_source=aff-campaign&utm_medium=udemyads")
+            }else if (selected == "dio") {
+                await interaction.reply("Link: https://www.dio.me/catalog")
+            }else if (selected == "bradesco") {
+                await interaction.reply("Link: https://www.ev.org.br/areas-de-interesse")
+            }
+        }
+
+
     if(!interaction.isChatInputCommand()) return
     const command = interaction.client.commands.get(interaction.commandName)
     if(!command) {
